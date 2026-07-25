@@ -80,7 +80,7 @@ paddle:
   webhook:
    secret: ${WEBHOOK_TOKEN}
   price:
-    smart: ${PRICE_SMART}
+    start: ${PRICE_START}
     plus: ${PRICE_PLUS}
     open-library: ${PRICE_OPEN_LIB}
     100-mins-start: ${100_MIN_START}

@@ -50,8 +50,8 @@ public class PaddleService {
     // You should preferably put these in properties or DB, but hardcoded for now is
     // fine for strict requirements
     // TODO: update with real PRICE IDs
-    @Value("${paddle.price.smart:}")
-    private String smartPriceId;
+    @Value("${paddle.price.start:}")
+    private String startPriceId;
 
     @Value("${paddle.price.open-library:}")
     private String openLibraryPriceId;
@@ -74,7 +74,7 @@ public class PaddleService {
         if (items.isArray() && items.size() > 0) {
             for (JsonNode item : items) {
                 String priceId = item.path("price").path("id").asText();
-                if (priceId.equals(smartPriceId))
+                if (priceId.equals(startPriceId))
                     return SubscriptionPlan.START;
                 if (priceId.equals(plusPriceId))
                     return SubscriptionPlan.PLUS;

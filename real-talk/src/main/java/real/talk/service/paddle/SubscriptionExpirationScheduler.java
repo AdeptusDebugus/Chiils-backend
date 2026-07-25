@@ -94,7 +94,7 @@ public class SubscriptionExpirationScheduler {
     }
 
     private boolean isBuilderPlan(Subscription subscription) {
-        return subscription.getPlan() == SubscriptionPlan.SMART
+        return subscription.getPlan() == SubscriptionPlan.START
                 || subscription.getPlan() == SubscriptionPlan.PLUS
                 || subscription.getPlan() == SubscriptionPlan.PRO;
     }

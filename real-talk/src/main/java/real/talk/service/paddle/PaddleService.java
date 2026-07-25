@@ -75,7 +75,7 @@ public class PaddleService {
             for (JsonNode item : items) {
                 String priceId = item.path("price").path("id").asText();
                 if (priceId.equals(smartPriceId))
-                    return SubscriptionPlan.SMART;
+                    return SubscriptionPlan.START;
                 if (priceId.equals(plusPriceId))
                     return SubscriptionPlan.PLUS;
                 if (priceId.equals(openLibraryPriceId))
@@ -144,7 +144,7 @@ public class PaddleService {
     }
 
     private int getPlanLessonBuilderMinutes(SubscriptionPlan plan) {
-        if (plan == SubscriptionPlan.SMART) {
+        if (plan == SubscriptionPlan.START) {
             return 300;
         }
         if (plan == SubscriptionPlan.PLUS) {

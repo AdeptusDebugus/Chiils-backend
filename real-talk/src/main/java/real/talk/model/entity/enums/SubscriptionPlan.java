@@ -2,7 +2,7 @@ package real.talk.model.entity.enums;
 
 public enum SubscriptionPlan {
     OPEN_LIBRARY,
-    SMART,
+    START,
     PLUS,
     PRO
 }

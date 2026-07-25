@@ -14,6 +14,8 @@ import real.talk.repository.subscription.SubscriptionRepository;
 import java.time.Instant;
 import java.util.Comparator;
 
+import static real.talk.model.entity.enums.UserRole.SMART;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -89,7 +91,7 @@ public class AccessControlService {
         if (user.getRole() == UserRole.STUDENT)
             return true;
 
-        return hasActivePlan(user, SubscriptionPlan.OPEN_LIBRARY, SubscriptionPlan.SMART, SubscriptionPlan.PLUS,
+        return hasActivePlan(user, SubscriptionPlan.OPEN_LIBRARY, SubscriptionPlan.START, SubscriptionPlan.PLUS,
                 SubscriptionPlan.PRO);
     }
 
@@ -226,7 +228,7 @@ public class AccessControlService {
         }
         return switch (plan) {
             case OPEN_LIBRARY -> 0;
-            case SMART -> 1;
+            case START -> 1;
             case PLUS -> 2;
             case PRO -> 3;
         };

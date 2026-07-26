@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import real.talk.service.access.AccessControlService;
+import real.talk.service.brevo.BrevoException;
 
 @RestControllerAdvice
 @Slf4j
@@ -17,6 +18,13 @@ public class ControllerExceptionHandler {
         log.warn("Access Denied: {}", e.getMessage());
         return ResponseEntity.status(HttpStatus.FORBIDDEN)
                 .body(e.getMessage());
+    }
+
+    @ExceptionHandler(BrevoException.class)
+    public ResponseEntity<String> handleBrevoException(BrevoException e) {
+        log.warn("Brevo error: {}", e.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_GATEWAY)
+                .body("Failed to subscribe email");
     }
 
     @ExceptionHandler(Exception.class)

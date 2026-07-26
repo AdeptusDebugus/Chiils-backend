@@ -61,8 +61,13 @@ history:
 app:
   frontend-url: ${FRONTEND_URL}
   jwt:
-      expiration-seconds: 604800
-      secret-base64: a1b2C3D4E5F6g7h8i9j0K1L2M3N4O5P6q7r8s9t0u1v2w3x4y5z6A7B8C9D0E1F2
+    expiration-seconds: 604800
+    secret-base64: a1b2C3D4E5F6g7h8i9j0K1L2M3N4O5P6q7r8s9t0u1v2w3x4y5z6A7B8C9D0E1F2
+
+brevo:
+  base-url: ${BREVO_BASE_URL:https://api.brevo.com/v3}
+  api-key: ${BREVO_API_KEY}
+  list-id: ${BREVO_LIST_ID:3}
 
 
 
@@ -78,7 +83,7 @@ paddle:
     key: ${PADDLE_API_KEY}
     url: ${PADDLE_API_URL:https://sandbox-api.paddle.com}
   webhook:
-   secret: ${WEBHOOK_TOKEN}
+    secret: ${WEBHOOK_TOKEN}
   price:
     start: ${PRICE_START}
     plus: ${PRICE_PLUS}

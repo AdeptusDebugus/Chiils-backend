@@ -56,7 +56,8 @@ public class SecurityConfig {
                                 "/api/v1/lessons/*")
                         .permitAll()
                         .requestMatchers(HttpMethod.POST,
-                                "/api/v1/paddle/webhook")
+                                "/api/v1/paddle/webhook",
+                                "/api/v1/notifications/subscribe-email")
                         .permitAll()
                         .anyRequest().authenticated())
                 // ВАЖНО: для API вместо редиректа отдаём 401

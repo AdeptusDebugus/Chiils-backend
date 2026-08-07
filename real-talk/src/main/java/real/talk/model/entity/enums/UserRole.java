@@ -5,7 +5,7 @@ public enum UserRole {
     ADMIN,
     STUDENT,
     OPEN_LIBRARY,
-    SMART,
+    START,
     PLUS,
     PRO,
     UNAUTHORIZED

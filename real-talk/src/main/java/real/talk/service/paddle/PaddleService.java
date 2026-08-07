@@ -50,7 +50,7 @@ public class PaddleService {
     // You should preferably put these in properties or DB, but hardcoded for now is
     // fine for strict requirements
     // TODO: update with real PRICE IDs
-    @Value("${paddle.price.start:}")
+    @Value("${paddle.pri ce.start:}")
     private String startPriceId;
 
     @Value("${paddle.price.open-library:}")

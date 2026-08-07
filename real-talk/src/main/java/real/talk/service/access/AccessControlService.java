@@ -14,8 +14,6 @@ import real.talk.repository.subscription.SubscriptionRepository;
 import java.time.Instant;
 import java.util.Comparator;
 
-import static real.talk.model.entity.enums.UserRole.SMART;
-
 @Slf4j
 @Service
 @RequiredArgsConstructor

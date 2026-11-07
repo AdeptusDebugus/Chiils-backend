@@ -19,7 +19,7 @@ spring:
       client:
         registration:
           google:
-            client-id: 1012196860639-d4t1tfo8ctsgp8t6e6m3nr3ghohrgidh.apps.googleusercontent.com
+            client-id: ${GOOGLE_CLIENT_ID}
             client-secret: ${GOOGLE_SECRET_KEY}
             scope:
               - openid
@@ -62,7 +62,7 @@ app:
   frontend-url: ${FRONTEND_URL}
   jwt:
     expiration-seconds: 604800
-    secret-base64: a1b2C3D4E5F6g7h8i9j0K1L2M3N4O5P6q7r8s9t0u1v2w3x4y5z6A7B8C9D0E1F2
+    secret-base64: ${JWT_SECRET}
 
 brevo:
   base-url: ${BREVO_BASE_URL:https://api.brevo.com/v3}
